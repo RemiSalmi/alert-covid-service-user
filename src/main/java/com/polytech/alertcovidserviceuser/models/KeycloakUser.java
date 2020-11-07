@@ -1,17 +1,13 @@
 package com.polytech.alertcovidserviceuser.models;
 
-import javax.persistence.*;
+public class KeycloakUser {
 
-@Entity(name="users")
-@Access(AccessType.FIELD)
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id_user;
     private String firstname;
     private String lastname;
     private String email;
     private String phone;
+    private String password;
 
     public long getId_user() {
         return id_user;
@@ -53,4 +49,11 @@ public class User {
         this.phone = phone;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
