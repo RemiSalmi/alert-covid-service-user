@@ -36,4 +36,4 @@ jobs:
         run: ./gradlew docker -i
       
       - name: push image
-        run: docker push remisalmi/tp-devops:1.0.0
+        run: docker push remisalmi/alert-covid-service-user
