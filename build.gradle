@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.polytech'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
@@ -25,4 +25,10 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+task docker(type:Exec) {
+	workingDir "./"
+	dependsOn("assemble")
+	commandLine("docker", "build", "-t", "remisalmi/alert-covid-service-user:${project.version}", ".")
 }
