@@ -9,7 +9,7 @@ ENV DB_PASSWORD null
 ENV KEYCLOAK_URL null
 ENV KEYCLOAK_SECRET null
 
-ARG JAR_FILE=build/libs/alert-covid-service-user-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=build/libs/alert-covid-service-user-*.jar
 
 
 WORKDIR /opt/app
