@@ -12,12 +12,16 @@ on:
 jobs:
                   
   docker-hub:
-    runs-on: adoptopenjdk/openjdk11:latest
+    runs-on: ubuntu-latest
     steps:
         
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        
+      
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '11'
+
         # Runs a single command using the runners shel
       - name: build the app
         run: ./gradlew assemble
